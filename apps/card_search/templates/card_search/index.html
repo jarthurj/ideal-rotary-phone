@@ -1,4 +1,4 @@
-{% extends '/apps/card_search/templates/base.html' %}
+{% extends './base.html' %}
 <!-- <!DOCTYPE html>
 <html>
 <head>
@@ -26,56 +26,59 @@
 		{% endif %}
 	</div> -->
 
+<!-- 	<link href="../../static/reset.css" rel="stylesheet"/>
+	<link href="../../static/index.css" rel="stylesheet"/> -->
+
 	{% for message in messages %}
 		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
 	{% endfor %}
 	{% block content %}
 		<form action="/card_search/" method="post">
 			{% csrf_token %}
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.card_name.label}}</p>
 				{{search_form.card_name}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.any_text.label}}</p>
 				{{search_form.any_text}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.colors.label}}</p>
 				{{search_form.colors}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.exactly_or_not.label}}</p>
 				{{search_form.exactly_or_not}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.colors_identity.label}}</p>
 				{{search_form.colors_identity}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.rarity.label}}</p>
 				{{search_form.rarity}}
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.mpt.label}}</p>
 				{{search_form.mpt}}
 				{{search_form.mpt_condition}}
 				{{search_form.mpt_parameter}} 
 			</div>
 			<hr>
-			<div class="labeler-div">
+			<div class="form-control">
 				<p class="labeler">{{search_form.lrb.label}}</p>
 				{{search_form.lrb}}
 				{{search_form.game_types}}
 			</div>
 			<hr>
-			<div class="labeler-div" id="type_line">
+			<div class="form-control" id="type_line">
 				<p class="labeler">{{search_form.type_line.label}}</p>
 				{{search_form.type_line}}
 			</div>

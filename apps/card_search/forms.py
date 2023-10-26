@@ -62,31 +62,31 @@ GAME_TYPES=(
 class CardSearch(forms.Form):
 	card_name = forms.CharField(max_length=50, 
 				required=False,
-				widget=forms.TextInput(attrs={'class':'name',
+				widget=forms.TextInput(attrs={'class':'form-control',
 						'placeholder':'Any words in the name ex."Fire"'}),
 				label="Card Name:")
 
 	any_text = forms.CharField(max_length=50,
 				required=False,
 				label="Text:",
-				widget=forms.TextInput(attrs={'class':'name',
+				widget=forms.TextInput(attrs={'class':'form-control',
 						'placeholder':'Any text on the card ex."Draw a card"'}))
 
 	colors = forms.MultipleChoiceField(
-				widget=forms.CheckboxSelectMultiple(attrs={'class':'colors'}),
+				widget=forms.CheckboxSelectMultiple(attrs={'class':'form-control'}),
 				choices=COLOR_CHOICES,required=False,
 				label="Colors:")
 
 
 	exactly_or_not = forms.MultipleChoiceField(
-				widget=forms.SelectMultiple(attrs={'class':'exact'}),
+				widget=forms.SelectMultiple(attrs={'class':'form-control'}),
 				choices=EXACT,
 				required=False,
 				initial=EXACT[3],
 				label="")
 
 	colors_identity = forms.MultipleChoiceField(
-				widget=forms.CheckboxSelectMultiple(attrs={'class':'colors_ident'}),
+				widget=forms.CheckboxSelectMultiple(attrs={'class':''}),
 				choices=COLOR_CHOICES,required=False,
 				label="Color Identity:")
 
@@ -108,7 +108,7 @@ class CardSearch(forms.Form):
 
 	mpt_parameter = forms.CharField(max_length=10, required=False, 
 		label="",
-		widget=forms.TextInput(attrs={'class':'mpt',
+		widget=forms.TextInput(attrs={'class':'form-control',
 						'placeholder':'ex. 6'}))
 
 	lrb = forms.MultipleChoiceField(
@@ -123,6 +123,6 @@ class CardSearch(forms.Form):
 
 	type_line = forms.CharField(max_length=50,required=False,
 		label="Type Line:",
-		widget=forms.TextInput(attrs={'class':'type',
+		widget=forms.TextInput(attrs={'class':'form-control',
 						'placeholder':'ex."Creature"'}))
 	
