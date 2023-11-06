@@ -36,40 +36,40 @@
 		<form action="/card_search/" method="post">
 			{% csrf_token %}
 
-				<p class="labeler">{{search_form.card_name.label}}</p>
+				{{search_form.card_name.label}}
 				{{search_form.card_name}}
 
 
 
-				<p class="labeler">{{search_form.any_text.label}}</p>
+				{{search_form.any_text.label}}
 				{{search_form.any_text}}
 
 
-				<div class="form-check pl-0">
-					<p class="labeler">{{search_form.colors.label}}</p>
+				<div class="form-check p-0">
+					<p>{{search_form.colors.label}}</p>
 					{% for c in search_form.colors %}
 						{{c}}
 					{% endfor %}
 				</div>
 
-				<p class="labeler">{{search_form.exactly_or_not.label}}</p>
+				{{search_form.exactly_or_not.label}}
 				{{search_form.exactly_or_not}}
 
 
+				<div class="form-check p-0">
+					<p>{{search_form.colors_identity.label}}</p>	
+					{% for c in search_form.colors_identity%}
+						{{c}}
+					{% endfor %}
+				</div>
+				<div class="form-check p-0">
+					<p>{{search_form.rarity.label}}</p>	
+					{% for r in search_form.rarity %}
+						{{r}}
+					{% endfor %}
+				</div>
 
-				<p class="labeler">{{search_form.colors_identity.label}}</p>
-				{% for c in search_form.colors_identity%}
-					{{c}}
-				{% endfor %}
-
-
-				<p class="labeler">{{search_form.rarity.label}}</p>
-				{% for r in search_form.rarity %}
-					{{r}}
-				{% endfor %}
-
-
-				<p class="labeler">{{search_form.mpt.label}}</p>
+				{{search_form.mpt.label}}
 				{{search_form.mpt}}
 				{{search_form.mpt_condition}}
 				{{search_form.mpt_parameter}} 
@@ -82,7 +82,7 @@
 
 
 
-				<p class="labeler">{{search_form.type_line.label}}
+				{{search_form.type_line.label}}
 				{{search_form.type_line}}
 			<button type="submit" class="btn btn-primary mb-3">Submit</button>
 		</form>
