@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserAuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
@@ -49,7 +49,7 @@ def login_user(request):
 			return redirect('login_user')
 	else:
 		context = {
-			'form':AuthenticationForm()
+			'form':UserAuthenticationForm()
 		}
 		return render(request, 'users/login.html', context)
 

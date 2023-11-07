@@ -1,8 +1,8 @@
 {% extends './base.html' %}
 {% block content %}
-	<div id="wrapper">
+	<div id="wrapper" class="container-fluid border border-danger">
 		{% for c in cards %}
-			<a href="/card/{{c.id}}"><img src="{{c.image_normal}}"/></a>
+			<a href="/card/{{c.id}}"><img class="w-25 m-0" src="{{c.image_normal}}"/></a>
 		{% endfor %}
 	</div>
 	<div id="naver">

@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link href="../../static/reset.css" rel="stylesheet"/>
-	<link href="../../static/login.css" rel="stylesheet"/>
-</head>
-<body>
-	<div id="header">
-		<h1><a href="/">MAGIC</a></h1>
-	</div>
+{% extends 'card_search/base.html' %}
+
+
 	{% for message in messages %}
 		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
 	{% endfor %}
+	{% block content %}
 	<div id="wrapper">
 		<form action="/login/" method="post">
 			{% csrf_token %}
-			{{form}}
-			<button type="submit" id="btn">Submit</button>
+			{{form.as_p}}
+			<button type="submit" id="btn" class="btn btn-primary mb-3">Submit</button>
 		</form>
 	</div>
-</body>
-</html>
+	{% endblock %}
